@@ -1,0 +1,53 @@
+[
+    {
+      "id": 1,
+      "title": "🍽️ BiteManager - Restaurant Management Website",
+      "description": "A comprehensive restaurant management system to streamline processes, enhance customer interaction, and boost online presence.",
+      "features": [
+        "Fully responsive design for mobile, tablet, and desktop",
+        "Email/Password and Google login with JWT authentication",
+        "Light/Dark mode toggle",
+        "Food management, purchasing, and order tracking features"
+      ],
+      "technologies": ["React.js", "TailwindCSS", "Node.js", "Express.js", "MongoDB", "JWT"],
+      "liveSite": "https://bite-manager-client-shakir.vercel.app/",
+      "githubRepo": "https://github.com/ShakirMahmud/BiteManager-Client",
+      "githubServer": "https://github.com/ShakirMahmud/BiteManager-Server",
+      "screenshot": "https://example.com/bitemanager-screenshot.png",
+      "detailsPage": "/projects/bitemanager"
+    },
+    {
+      "id": 2,
+      "title": "🏀 EquiSports - Online Sports Equipment Store",
+      "description": "An online store offering sports accessories with features like authentication, product management, and responsive design.",
+      "features": [
+        "User authentication with email/password and Google",
+        "Admin panel for product CRUD operations",
+        "Dark/Light theme toggle",
+        "Product sorting, search, and responsive design"
+      ],
+      "technologies": ["React", "TailwindCSS", "Node.js", "Express.js", "MongoDB", "Firebase"],
+      "liveSite": "https://equi-sports-shakir.vercel.app/",
+      "githubRepo": "https://github.com/ShakirMahmud/equiSports-client",
+      "githubServer": "https://github.com/ShakirMahmud/equiSports-server",
+      "screenshot": "https://example.com/equisports-screenshot.png",
+      "detailsPage": "/projects/equisports"
+    },
+    {
+      "id": 3,
+      "title": "💼 Career Fusion - Career Counseling Platform",
+      "description": "A career counseling website offering personalized advice, guidance, and resources to users.",
+      "features": [
+        "Dynamic authentication system with Google login",
+        "Interactive homepage with sliders and service cards",
+        "Protected routes for logged-in users",
+        "Profile management and feedback functionality"
+      ],
+      "technologies": ["React", "TailwindCSS", "Firebase", "Swiper.js"],
+      "liveSite": "https://career-fusion-shakir.vercel.app/",
+      "githubRepo": "https://github.com/ShakirMahmud/career-fusion",
+      "screenshot": "https://example.com/careerfusion-screenshot.png",
+      "detailsPage": "/projects/careerfusion"
+    }
+  ]
+  
