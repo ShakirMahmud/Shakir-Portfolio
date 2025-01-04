@@ -41,7 +41,7 @@ const ContactMe = () => {
 
   const {contactRef} = useContext(RefContext);
   return (
-    <div ref={contactRef} className="lg:py-24 py-16 bg-neutral-900">
+    <div ref={contactRef} className="lg:py-24 py-16 bg-neutral-900 ">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0 }}
@@ -55,13 +55,13 @@ const ContactMe = () => {
           <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mb-12" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="flex flex-col lg:flex-row gap-8">
           {/* Left: Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-neutral-800/50 p-8 rounded-xl shadow-lg border border-neutral-700"
+            className="bg-neutral-800/50 p-2 lg:p-8 rounded-xl shadow-lg border border-neutral-700"
           >
             <h3 className="text-xl font-semibold text-primary-400 mb-6">
               Send Me a Message
@@ -119,7 +119,7 @@ const ContactMe = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-neutral-800/50 p-8 rounded-xl shadow-lg border border-neutral-700"
+            className="bg-neutral-800/50 p-2 lg:p-8  rounded-xl shadow-lg border border-neutral-700"
           >
             <h3 className="text-xl font-semibold text-primary-400 mb-6">
               Contact Information
@@ -153,7 +153,7 @@ const ContactMe = () => {
                 <Mail className="w-6 h-6 text-primary-500" />
                 <a
                   href="mailto:shakirmahmud50@gmail.com"
-                  className="text-gray-300 hover:text-primary-400 transition-colors"
+                  className="text-gray-300 hover:text-primary-400 transition-colors  break-word"
                 >
                   shakirmahmud50@gmail.com
                 </a>

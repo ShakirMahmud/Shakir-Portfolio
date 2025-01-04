@@ -211,14 +211,14 @@ const SkillsEducation = () => {
                                         index % 2 === 0 ? 'lg:flex-row-reverse' : ''
                                     }`}
                                 >
-                                    <div className="flex-1" />
+                                    <div className="flex-1 hidden lg:block" />
                                     <div className="flex-shrink-0 relative z-10">
                                         <div className="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center text-white">
                                             {edu.icon}
                                         </div>
                                     </div>
                                     <div className="flex-1">
-                                        <div className="bg-neutral-800/50 p-6 rounded-xl border border-neutral-700 hover:border-primary-500 transition-all duration-300">
+                                        <div className="bg-neutral-800/50 p-2 lg:p-6 rounded-xl border border-neutral-700 hover:border-primary-500 transition-all duration-300">
                                             <h3 className="text-xl font-semibold text-primary-400 mb-2">
                                                 {edu.institution}
                                             </h3>
