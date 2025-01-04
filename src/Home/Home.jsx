@@ -11,7 +11,7 @@ const Home = () => {
             <AboutMe/>
             <SkillsEducation/>
             <Projects/>
-            {/* <ContactMe/> */}
+            <ContactMe/>
         </div>
     );
 };

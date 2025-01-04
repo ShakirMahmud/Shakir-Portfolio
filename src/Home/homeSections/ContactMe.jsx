@@ -41,7 +41,7 @@ const ContactMe = () => {
 
   const {contactRef} = useContext(RefContext);
   return (
-    <div ref={contactRef} className="lg:py-24 py-16 bg-neutral-900 ">
+    <div ref={contactRef} className="lg:py-24 py-16 bg-neutral-900 overflow-x-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0 }}

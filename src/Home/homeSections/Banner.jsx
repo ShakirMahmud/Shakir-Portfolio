@@ -24,7 +24,7 @@ const Banner = () => {
 
   return (
     <div className="py-12 pt-28 bg-gradient-to-b from-neutral-900 to-neutral-950">
-      <div className="container mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="container mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center justify-between lg:gap-12 gap-6">
         {/* Left Content */}
         <motion.div 
           className="flex-1 space-y-6"
@@ -48,7 +48,7 @@ const Banner = () => {
           {/* Description */}
           <motion.p 
             variants={itemVariants}
-            className="text-lg text-gray-300 max-w-xl"
+            className="text-lg text-gray-300 lg:max-w-xl"
           >
             Crafting beautiful and responsive web experiences with modern technologies.
             Passionate about creating intuitive user interfaces and delivering exceptional
@@ -103,7 +103,7 @@ const Banner = () => {
               className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-accent-500/20 rounded-full blur-3xl"
               animate={{
                 scale: [1, 1.05, 1],
-                rotate: [0, 5, 0]
+                rotate: [0, 2, 0]
               }}
               transition={{
                 duration: 5,
