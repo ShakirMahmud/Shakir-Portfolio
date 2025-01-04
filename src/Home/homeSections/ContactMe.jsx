@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, MessageSquare } from "lucide-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { RefContext } from "../../context/RefContext";
 
 const ContactMe = () => {
   const [formData, setFormData] = useState({ email: "", message: "" });
@@ -38,8 +39,9 @@ const ContactMe = () => {
     }
   };
 
+  const {contactRef} = useContext(RefContext);
   return (
-    <div className="py-20 bg-neutral-900">
+    <div ref={contactRef} className="lg:py-24 py-16 bg-neutral-900">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0 }}
@@ -125,7 +127,7 @@ const ContactMe = () => {
             <ul className="space-y-6">
               <li className="flex items-center gap-4">
                 <MapPin className="w-6 h-6 text-primary-500" />
-                <span className="text-gray-300">Modhubag, Dhaka</span>
+                <span className="text-gray-300">Modhubag, Dhaka, Bangladesh</span>
               </li>
               <li className="flex items-center gap-4">
                 <Phone className="w-6 h-6 text-primary-500" />

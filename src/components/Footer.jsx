@@ -1,14 +1,34 @@
 import { Facebook, Twitter, Linkedin, Github } from "lucide-react";
+import { useContext } from "react";
+import { RefContext } from "../context/RefContext";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Footer = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const { aboutRef, skillsRef, contactRef } = useContext(RefContext);
+    const scrollToSection = (ref) => {
+        if (location.pathname !== '/') {
+            navigate('/');
+            setTimeout(() => {
+                if (ref?.current) {
+                    ref.current.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 500);
+        } else if (ref?.current) {
+            ref.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
     return (
         <footer className="bg-neutral-900 py-10 border-t border-neutral-700">
             <div className="container mx-auto px-4 lg:px-8">
                 <div className="flex flex-col md:flex-row justify-between items-center md:items-start space-y-6 md:space-y-0">
                     {/* Logo and About */}
                     <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                        <h2 className="text-2xl font-semibold text-primary-400 mb-2">My Website</h2>
-                        <p className="text-gray-400 text-sm">
+                        <h1 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 text-transparent bg-clip-text hover:from-primary-300 hover:to-accent-300 transition-all duration-300">
+                            Shakir Mahmud
+                        </h1>
+                        <p className="text-gray-400 text-sm mt-2">
                             Creating innovative solutions and crafting exceptional digital experiences.
                         </p>
                     </div>
@@ -19,26 +39,27 @@ const Footer = () => {
                         <ul className="space-y-2">
                             <li>
                                 <a
-                                    href="#skills"
-                                    className="text-gray-300 hover:text-primary-500 transition"
+                                    onClick={() => scrollToSection(aboutRef)}
+                                    className="text-gray-300 hover:cursor-pointer hover:text-primary-500 transition"
                                 >
-                                    Skills
+                                    About Me
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="#projects"
-                                    className="text-gray-300 hover:text-primary-500 transition"
+                                    onClick={() => scrollToSection(skillsRef)}
+                                    className="text-gray-300 hover:cursor-pointer hover:text-primary-500 transition"
                                 >
-                                    Projects
+                                    My Skills
                                 </a>
                             </li>
+                            
                             <li>
                                 <a
-                                    href="#contact"
-                                    className="text-gray-300 hover:text-primary-500 transition"
+                                    onClick={() => scrollToSection(contactRef)}
+                                    className="text-gray-300 hover:cursor-pointer hover:text-primary-500 transition"
                                 >
-                                    Contact
+                                    Contact Me
                                 </a>
                             </li>
                         </ul>
@@ -49,7 +70,7 @@ const Footer = () => {
                         <h3 className="text-lg font-medium text-primary-400 mb-2">Follow Me</h3>
                         <div className="flex gap-4">
                             <a
-                                href="https://facebook.com"
+                                href="https://www.facebook.com/shakir.mahmud.9/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-300 hover:text-primary-500 transition"
@@ -57,17 +78,9 @@ const Footer = () => {
                             >
                                 <Facebook className="w-6 h-6" />
                             </a>
+                            
                             <a
-                                href="https://twitter.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-gray-300 hover:text-primary-500 transition"
-                                aria-label="Twitter"
-                            >
-                                <Twitter className="w-6 h-6" />
-                            </a>
-                            <a
-                                href="https://linkedin.com"
+                                href="https://www.linkedin.com/in/shakirmahmud9/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-300 hover:text-primary-500 transition"
@@ -76,7 +89,7 @@ const Footer = () => {
                                 <Linkedin className="w-6 h-6" />
                             </a>
                             <a
-                                href="https://github.com"
+                                href="https://github.com/ShakirMahmud"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-300 hover:text-primary-500 transition"
@@ -90,7 +103,7 @@ const Footer = () => {
 
                 {/* Copyright */}
                 <div className="mt-10 text-center text-gray-400 text-sm">
-                    &copy; {new Date().getFullYear()} My Website. All rights reserved.
+                    &copy; {new Date().getFullYear()} Shakir Mahmud. All rights reserved.
                 </div>
             </div>
         </footer>

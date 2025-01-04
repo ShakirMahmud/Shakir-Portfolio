@@ -3,11 +3,14 @@ import { useEffect, useState } from "react";
 import biteManagerImg from "../../assets/bite_manager.png";
 import equiSportsImg from "../../assets/equiSports.png";
 import careerFusionImg from "../../assets/careerFusion.png";
+import { AiFillGithub } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
+        
         fetch("/projects.json")
             .then((res) => res.json())
             .then((data) => {
@@ -33,7 +36,7 @@ const Projects = () => {
     };
 
     return (
-        <div className="py-20 bg-neutral-900">
+        <div id="projects" className="lg:py-24 py-16 bg-neutral-900">
             <div className="container mx-auto px-4 lg:px-8">
                 {/* Section Header */}
                 <motion.div
@@ -98,9 +101,9 @@ const Projects = () => {
                                             href={project.githubRepo}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="px-4 py-2 bg-neutral-800 text-gray-300 border border-neutral-600 rounded-full hover:bg-primary-500 hover:text-white hover:border-primary-600 transition-all duration-300"
+                                            className="px-4 py-2 flex items-center justify-center gap-2 bg-neutral-800 text-gray-300 border border-neutral-600 rounded-full hover:bg-primary-500 hover:text-white hover:border-primary-600 transition-all duration-300"
                                         >
-                                            GitHub Repo
+                                           <AiFillGithub/> Client
                                         </a>
                                     )}
                                     {project.githubServer && (
@@ -108,17 +111,17 @@ const Projects = () => {
                                             href={project.githubServer}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="px-4 py-2 bg-neutral-800 text-gray-300 border border-neutral-600 rounded-full hover:bg-accent-500 hover:text-white hover:border-accent-600 transition-all duration-300"
+                                            className="px-4 py-2 flex items-center justify-center gap-2 bg-neutral-800 text-gray-300 border border-neutral-600 rounded-full hover:bg-accent-500 hover:text-white hover:border-accent-600 transition-all duration-300"
                                         >
-                                            Server Repo
+                                           <AiFillGithub /> Server
                                         </a>
                                     )}
-                                    <a
-                                        href={project.detailsPage}
+                                    <Link
+                                        to={`/projects/${encodeURIComponent(project.title.toLowerCase().replace(/\s+/g, "-"))}`}
                                         className="px-4 py-2 bg-gradient-to-r from-primary-500 to-accent-500 text-white rounded-full font-semibold shadow-lg hover:from-primary-600 hover:to-accent-600 transition-all duration-300"
                                     >
                                         View Details
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </motion.div>
@@ -133,7 +136,7 @@ const Projects = () => {
                         transition={{ duration: 0.3 }}
                     >
                         <a
-                            href="/all-projects"
+                            href="/projects"
                             className="px-8 py-3 bg-gradient-to-r from-primary-500 to-accent-500 text-white rounded-full font-semibold shadow-lg hover:from-primary-600 hover:to-accent-600 transition-all duration-300"
                         >
                             View All Projects

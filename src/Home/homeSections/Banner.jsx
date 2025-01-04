@@ -23,7 +23,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="py-12 pt-24 bg-gradient-to-b from-neutral-900 to-neutral-950">
+    <div className="py-12 pt-28 bg-gradient-to-b from-neutral-900 to-neutral-950">
       <div className="container mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-12">
         {/* Left Content */}
         <motion.div 
@@ -61,9 +61,9 @@ const Banner = () => {
             className="flex gap-4"
           >
             {[
-              { Icon: Github, href: "https://github.com/yourusername" },
-              { Icon: Linkedin, href: "https://linkedin.com/in/yourusername" },
-              { Icon: Facebook, href: "https://facebook.com/yourusername" }
+              { Icon: Github, href: "https://github.com/ShakirMahmud" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/shakirmahmud9/" },
+              { Icon: Facebook, href: "https://www.facebook.com/shakir.mahmud.9/" }
             ].map(({ Icon, href }, index) => (
               <a
                 key={index}
@@ -80,7 +80,7 @@ const Banner = () => {
           {/* Resume Button */}
           <motion.div variants={itemVariants}>
             <a
-              href="/resume.pdf"
+              href="/public/Shakir_Cv.pdf"
               download
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-full font-semibold shadow-lg shadow-primary-500/20 hover:shadow-primary-600/30 transition-all duration-300 hover:-translate-y-1"
             >

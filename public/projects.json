@@ -1,53 +1,115 @@
 [
-    {
-      "id": 1,
-      "title": "🍽️ BiteManager - Restaurant Management Website",
-      "description": "A comprehensive restaurant management system to streamline processes, enhance customer interaction, and boost online presence.",
-      "features": [
-        "Fully responsive design for mobile, tablet, and desktop",
-        "Email/Password and Google login with JWT authentication",
-        "Light/Dark mode toggle",
-        "Food management, purchasing, and order tracking features"
-      ],
-      "technologies": ["React.js", "TailwindCSS", "Node.js", "Express.js", "MongoDB", "JWT"],
-      "liveSite": "https://bite-manager-client-shakir.vercel.app/",
-      "githubRepo": "https://github.com/ShakirMahmud/BiteManager-Client",
-      "githubServer": "https://github.com/ShakirMahmud/BiteManager-Server",
-      "screenshot": "https://example.com/bitemanager-screenshot.png",
-      "detailsPage": "/projects/bitemanager"
-    },
-    {
-      "id": 2,
-      "title": "🏀 EquiSports - Online Sports Equipment Store",
-      "description": "An online store offering sports accessories with features like authentication, product management, and responsive design.",
-      "features": [
-        "User authentication with email/password and Google",
-        "Admin panel for product CRUD operations",
-        "Dark/Light theme toggle",
-        "Product sorting, search, and responsive design"
-      ],
-      "technologies": ["React", "TailwindCSS", "Node.js", "Express.js", "MongoDB", "Firebase"],
-      "liveSite": "https://equi-sports-shakir.vercel.app/",
-      "githubRepo": "https://github.com/ShakirMahmud/equiSports-client",
-      "githubServer": "https://github.com/ShakirMahmud/equiSports-server",
-      "screenshot": "https://example.com/equisports-screenshot.png",
-      "detailsPage": "/projects/equisports"
-    },
-    {
-      "id": 3,
-      "title": "💼 Career Fusion - Career Counseling Platform",
-      "description": "A career counseling website offering personalized advice, guidance, and resources to users.",
-      "features": [
-        "Dynamic authentication system with Google login",
-        "Interactive homepage with sliders and service cards",
-        "Protected routes for logged-in users",
-        "Profile management and feedback functionality"
-      ],
-      "technologies": ["React", "TailwindCSS", "Firebase", "Swiper.js"],
-      "liveSite": "https://career-fusion-shakir.vercel.app/",
-      "githubRepo": "https://github.com/ShakirMahmud/career-fusion",
-      "screenshot": "https://example.com/careerfusion-screenshot.png",
-      "detailsPage": "/projects/careerfusion"
+  {
+    "id": 1,
+    "title": "🍽️ BiteManager - Restaurant Management Website",
+    "description": "A comprehensive restaurant management system to streamline processes, enhance customer interaction, and boost online presence.",
+    "features": [
+      "Fully responsive design for mobile, tablet, and desktop",
+      "Email/Password and Google login with JWT authentication",
+      "Light/Dark mode toggle",
+      "Food management, purchasing, and order tracking features"
+    ],
+    "technologies": ["React.js", "TailwindCSS", "Node.js", "Express.js", "MongoDB", "JWT"],
+    "liveSite": "https://bite-manager-client-shakir.vercel.app/",
+    "githubRepo": "https://github.com/ShakirMahmud/BiteManager-Client",
+    "githubServer": "https://github.com/ShakirMahmud/BiteManager-Server",
+    "screenshot": "https://example.com/bitemanager-screenshot.png",
+    "detailsPage": "/projects/bitemanager",
+    "detailedDescription": "BiteManager is a restaurant management system that allows users to manage food items, track orders, and view analytics. Built with the MERN stack, the app supports full user authentication and customizable themes.",
+    "challengesFaced": [
+      "All users have admin access to add/edit food items, which creates data management issues, as users can delete or modify other users' data.",
+      "Handling user authentication securely across multiple platforms (Google, GitHub, and email/password).",
+      "Making the app fully responsive while maintaining a user-friendly experience on all devices."
+    ],
+    "improvements": [
+      "Restrict admin access to only certain users. Implement role-based access control (RBAC) to separate users and admins.",
+      "Implement order tracking with real-time notifications for users when their order status changes.",
+      "Improve pagination for better performance when loading large sets of food items."
+    ],
+    "futureImprovements": [
+      "Add a review/rating system for users to rate food items and services.",
+      "Introduce a user-specific dashboard for easier order and food management.",
+      "Optimize database queries to improve speed, particularly when loading food items."
+    ],
+    "technologiesUsed": {
+      "frontend": ["React.js", "TailwindCSS", "DaisyUI", "SweetAlert2", "Framer Motion"],
+      "backend": ["Node.js", "Express.js", "MongoDB", "JWT"],
+      "additionalPackages": ["Moment.js", "React Query", "Axios", "Lottie React"]
     }
-  ]
-  
+  },
+  {
+    "id": 2,
+    "title": "🏀 EquiSports - Online Sports Equipment Store",
+    "description": "An online store offering sports accessories with features like authentication, product management, and responsive design.",
+    "features": [
+      "User authentication with email/password and Google",
+      "Admin panel for product CRUD operations",
+      "Dark/Light theme toggle",
+      "Product sorting, search, and responsive design"
+    ],
+    "technologies": ["React", "TailwindCSS", "Node.js", "Express.js", "MongoDB", "Firebase"],
+    "liveSite": "https://equi-sports-shakir.vercel.app/",
+    "githubRepo": "https://github.com/ShakirMahmud/equiSports-client",
+    "githubServer": "https://github.com/ShakirMahmud/equiSports-server",
+    "screenshot": "https://example.com/equisports-screenshot.png",
+    "detailsPage": "/projects/equisports",
+    "detailedDescription": "EquiSports is an online store for sports accessories with admin controls for managing products. Users can log in via Google or email, view products, and manage their shopping list.",
+    "challengesFaced": [
+      "Currently, every user has admin access, which poses security risks in terms of unauthorized product management.",
+      "Implementing user authentication with Firebase was challenging, especially managing secure logins without mixing personal and admin data.",
+      "Sorting and filtering product categories is still rudimentary and lacks advanced functionality such as price range filters."
+    ],
+    "improvements": [
+      "Limit admin privileges to only the authorized personnel. Add roles for users and admins.",
+      "Enhance the product search feature to allow filtering by multiple categories (e.g., price, brand, type).",
+      "Implement a shopping cart system where users can add multiple products before making a purchase."
+    ],
+    "futureImprovements": [
+      "Integrate a payment gateway like Stripe or PayPal to enable users to make real purchases.",
+      "Add product recommendations based on user behavior and purchase history (using local storage or session data).",
+      "Build a review and rating system for users to leave feedback on products."
+    ],
+    "technologiesUsed": {
+      "frontend": ["React", "TailwindCSS", "React Router DOM", "Firebase Authentication", "Lottie React"],
+      "backend": ["Node.js", "Express.js", "MongoDB", "CORS middleware"],
+      "additionalPackages": ["React Tooltip", "SweetAlert2", "Swiper", "React Awesome Reveal"]
+    }
+  },
+  {
+    "id": 3,
+    "title": "💼 Career Fusion - Career Counseling Platform",
+    "description": "A career counseling website offering personalized advice, guidance, and resources to users.",
+    "features": [
+      "Dynamic authentication system with Google login",
+      "Interactive homepage with sliders and service cards",
+      "Protected routes for logged-in users",
+      "Profile management and feedback functionality"
+    ],
+    "technologies": ["React", "TailwindCSS", "Firebase", "Swiper.js"],
+    "liveSite": "https://career-fusion-shakir.vercel.app/",
+    "githubRepo": "https://github.com/ShakirMahmud/career-fusion",
+    "screenshot": "https://example.com/careerfusion-screenshot.png",
+    "detailsPage": "/projects/careerfusion",
+    "detailedDescription": "Career Fusion offers career counseling and resources, including service booking and personalized advice. Users can manage their profiles and leave feedback on services.",
+    "challengesFaced": [
+      "Lack of backend server for data storage means that all user profiles are handled via Firebase, which limits scalability.",
+      "Adding real-time feedback functionality that users can interact with instantly proved difficult without a backend.",
+      "Ensuring profile security with Firebase, especially for users to update their information safely."
+    ],
+    "improvements": [
+      "Add a backend server to store user data, such as user profiles and feedback, in a more scalable database (e.g., MongoDB or Firebase Firestore).",
+      "Create a chat feature for users to interact directly with career counselors for real-time advice.",
+      "Integrate a job board where users can search for career opportunities and apply directly."
+    ],
+    "futureImprovements": [
+      "Implement a backend server to manage user data securely and efficiently.",
+      "Add a resource center with articles, videos, and career development tips.",
+      "Introduce notifications for users when new content or counseling services are available."
+    ],
+    "technologiesUsed": {
+      "frontend": ["React", "TailwindCSS", "Swiper.js", "Firebase Authentication"],
+      "backend": ["Firebase Functions", "Firebase Firestore"],
+      "additionalPackages": ["React Router", "React Icons", "DaisyUI"]
+    }
+  }
+]

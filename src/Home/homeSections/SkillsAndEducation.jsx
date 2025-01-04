@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Book, GraduationCap, School } from "lucide-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { RefContext } from "../../context/RefContext";
 
 const SkillsEducation = () => {
     const skills = [
@@ -9,74 +10,75 @@ const SkillsEducation = () => {
             skills: [
                 {
                     name: "HTML5 & CSS3",
-                    level: 90,
                     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
                     details: "Built semantic websites with responsive layouts, animations, and modern CSS features like Grid and Flexbox. Implemented media queries and mobile-first design principles."
                 },
                 {
                     name: "JavaScript (ES6+)",
-                    level: 85,
                     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
                     details: "Developed interactive features using modern JS, including async/await, promises, and DOM manipulation. Implemented event handling and API integrations."
                 },
                 {
                     name: "React.js",
-                    level: 88,
                     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
                     details: "Created SPAs using hooks, context API, and React Router. Built reusable components and managed complex state logic."
                 },
                 {
                     name: "Next.js",
-                    level: 82,
                     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
                     details: "Implemented SSR and SSG for optimized performance. Used API routes and dynamic routing for enhanced functionality."
                 },
                 {
                     name: "Tailwind CSS",
-                    level: 90,
                     logo: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
                     details: "Developed responsive UIs using utility-first approach. Customized themes and integrated with DaisyUI for enhanced components."
+                },
+                {
+                    name: "Daisy UI",
+                    logo: "https://svgmix.com/uploads/7ea061-daisyui.svg",
+                    details: "Implemented a set of pre-built CSS classes for rapid UI development. Utilized Tailwind's utility-first approach for styling."
                 }
             ]
         },
         {
-            category: "Backend Development",
+            category: "Backend Development & Version Control",
             skills: [
                 {
                     name: "Node.js",
-                    level: 75,
                     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
                     details: "Built server-side applications with Express.js, handling routing and middleware integration."
                 },
                 {
                     name: "Express.js",
-                    level: 78,
                     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
                     details: "Created RESTful APIs with proper routing, middleware, and error handling. Implemented MVC architecture."
                 },
                 {
                     name: "MongoDB",
-                    level: 80,
                     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
                     details: "Designed schemas, performed CRUD operations, and implemented data relationships. Experience with aggregation pipelines."
                 },
                 {
                     name: "Firebase",
-                    level: 85,
                     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
                     details: "Implemented authentication, real-time database, and cloud functions. Managed user sessions and security rules."
                 },
                 {
                     name: "JWT & Security",
-                    level: 82,
                     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
                     details: "Implemented secure authentication using JWT tokens, middleware protection, and Axios interceptors."
+                },
+                {
+                    name: "GitHub",
+                    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+                    details: "Contributed to version control using Git, committed changes, and collaborated on code reviews."
                 }
             ]
         }
     ];
 
     const [activeSkill, setActiveSkill] = useState(null);
+    const { skillsRef } = useContext(RefContext);
 
     const SkillTooltip = ({ skill, isVisible }) => (
         <AnimatePresence>
@@ -98,6 +100,7 @@ const SkillsEducation = () => {
             )}
         </AnimatePresence>
     );
+
     const education = [
         {
             institution: "Ahsanullah University of Science and Technology",
@@ -123,7 +126,7 @@ const SkillsEducation = () => {
     ];
 
     return (
-        <div className="py-20 bg-neutral-900">
+        <div ref={skillsRef} className="lg:py-24 py-16 bg-neutral-900">
             <div className="container mx-auto px-4 lg:px-8">
                 {/* Skills Section */}
                 <motion.div
@@ -138,54 +141,38 @@ const SkillsEducation = () => {
                     <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mb-12" />
 
                     <div className="grid md:grid-cols-2 gap-8">
-                        {skills.map((category, idx) => (
+                        {skills.map((category) => (
                             <motion.div
                                 key={category.category}
-                                initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: idx * 0.2 }}
                                 className="bg-neutral-800/50 rounded-xl p-6 border border-neutral-700"
                             >
                                 <h3 className="text-xl font-semibold mb-4 text-primary-400">
                                     {category.category}
                                 </h3>
-                                <div className="space-y-6">
+                                <div className="grid sm:grid-cols-2 gap-4">
                                     {category.skills.map((skill, index) => (
                                         <motion.div
                                             key={skill.name}
                                             initial={{ opacity: 0, y: 20 }}
                                             whileInView={{ opacity: 1, y: 0 }}
                                             viewport={{ once: true }}
-                                            transition={{ delay: index * 0.1 }}
-                                            className="relative"
+                                            className="relative group bg-neutral-800 p-4 rounded-lg border border-neutral-700 hover:border-primary-500 cursor-pointer"
                                             onMouseEnter={() => setActiveSkill(`${category.category}-${index}`)}
                                             onMouseLeave={() => setActiveSkill(null)}
                                         >
-                                            <div className="flex items-center gap-3 mb-2">
-                                                <div className="w-8 h-8 rounded-full bg-neutral-700/50 p-1.5 backdrop-blur-sm">
-                                                    <img 
-                                                        src={skill.logo} 
-                                                        alt={skill.name} 
-                                                        className="w-full h-full object-contain"
-                                                    />
-                                                </div>
-                                                <div className="flex-1 flex justify-between">
-                                                    <span className="text-gray-300">{skill.name}</span>
-                                                    <span className="text-primary-400">{skill.level}%</span>
-                                                </div>
-                                            </div>
-                                            <div className="h-2 bg-neutral-700 rounded-full overflow-hidden">
-                                                <motion.div
-                                                    className="h-full bg-gradient-to-r from-primary-500 to-accent-500"
-                                                    initial={{ width: 0 }}
-                                                    whileInView={{ width: `${skill.level}%` }}
-                                                    viewport={{ once: true }}
-                                                    transition={{ duration: 1, delay: 0.2 }}
+                                            <div className="flex items-center gap-3">
+                                                <img
+                                                    src={skill.logo}
+                                                    alt={skill.name}
+                                                    className="w-8 h-8 object-contain"
                                                 />
+                                                <h4 className="text-primary-400 font-medium">{skill.name}</h4>
                                             </div>
-                                            <SkillTooltip 
-                                                skill={skill} 
+                                            <SkillTooltip
+                                                skill={skill}
                                                 isVisible={activeSkill === `${category.category}-${index}`}
                                             />
                                         </motion.div>

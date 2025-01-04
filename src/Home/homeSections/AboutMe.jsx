@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Code2, Target, Trophy, Cpu, Brain, Users } from "lucide-react";
+import { useContext } from "react";
+import { RefContext } from "../../context/RefContext";
 
 const AboutMe = () => {
     const fadeIn = {
@@ -42,11 +44,13 @@ const AboutMe = () => {
         }
     ];
 
+    const { aboutRef } = useContext(RefContext);
+
     return (
-        <div className="py-12 bg-neutral-900">
+        <div ref={aboutRef} className="lg:py-24 py-16 bg-neutral-900">
             <div className="container mx-auto px-4 lg:px-8">
                 {/* Section Header */}
-                <motion.div 
+                <motion.div
                     className="text-center mb-16"
                     {...fadeIn}
                 >
@@ -59,25 +63,25 @@ const AboutMe = () => {
                 {/* Main Content */}
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Journey Text */}
-                    <motion.div 
+                    <motion.div
                         className="space-y-6 text-gray-300"
                         {...fadeIn}
                     >
                         <p className="text-lg">
-                            My journey into web development began after completing my university education, 
-                            where I discovered my passion for creating digital experiences. Currently, 
-                            I'm focused on becoming a full-stack MERN developer, combining my problem-solving 
+                            My journey into web development began after completing my university education,
+                            where I discovered my passion for creating digital experiences. Currently,
+                            I'm focused on becoming a full-stack MERN developer, combining my problem-solving
                             skills with technical expertise.
                         </p>
                         <p className="text-lg">
-                            What sets me apart is my determination to see projects through to completion. 
-                            I take pride in my attention to detail, ensuring every project meets or exceeds 
-                            the specified requirements. This perfectionist approach helps me deliver 
+                            What sets me apart is my determination to see projects through to completion.
+                            I take pride in my attention to detail, ensuring every project meets or exceeds
+                            the specified requirements. This perfectionist approach helps me deliver
                             high-quality, pixel-perfect implementations.
                         </p>
                         <p className="text-lg">
-                            Beyond coding, I'm an avid sports enthusiast and tech lover. These interests 
-                            complement my development work, fostering a competitive spirit and keeping me 
+                            Beyond coding, I'm an avid sports enthusiast and tech lover. These interests
+                            complement my development work, fostering a competitive spirit and keeping me
                             updated with the latest technological advancements.
                         </p>
                     </motion.div>
