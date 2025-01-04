@@ -55,7 +55,7 @@ const ContactMe = () => {
           <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mb-12" />
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left: Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
