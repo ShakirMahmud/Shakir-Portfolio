@@ -132,7 +132,7 @@ const SkillsEducation = () => {
                     viewport={{ once: true }}
                     className="mb-20"
                 >
-                    <h2 className="text-3xl lg:text-4xl font-bold text-center mb-4">
+                    <h2 className="bg-gradient-to-r from-primary-400 to-accent-400 text-transparent bg-clip-text text-3xl lg:text-4xl font-bold text-center mb-4">
                         Technical <span className="text-primary-400">Skills</span>
                     </h2>
                     <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mb-12" />
@@ -202,7 +202,7 @@ const SkillsEducation = () => {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-3xl lg:text-4xl font-bold text-center mb-4">
+                    <h2 className="bg-gradient-to-r from-primary-400 to-accent-400 text-transparent bg-clip-text text-3xl lg:text-4xl font-bold text-center mb-4">
                         Education <span className="text-primary-400">Journey</span>
                     </h2>
                     <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mb-12" />
