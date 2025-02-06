@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import biteManagerImg from "../../assets/bite_manager.png";
 import equiSportsImg from "../../assets/equiSports.png";
-import careerFusionImg from "../../assets/careerFusion.png";
+import hrNexusImg from "../../assets/hrnexus.png";
 import { AiFillGithub } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
@@ -10,14 +10,14 @@ const Projects = () => {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        
         fetch("/projects.json")
             .then((res) => res.json())
             .then((data) => {
-                const updatedProjects = data.map((project) => {
-                    if (project.id === 1) project.screenshot = biteManagerImg;
-                    if (project.id === 2) project.screenshot = equiSportsImg;
-                    if (project.id === 3) project.screenshot = careerFusionImg;
+                const filteredProjects = data.filter(project => project.id >= 1 && project.id <= 3);
+                const updatedProjects = filteredProjects.map((project) => {
+                    if (project.id === 1) project.screenshot = hrNexusImg;
+                    if (project.id === 2) project.screenshot = biteManagerImg;
+                    if (project.id === 3) project.screenshot = equiSportsImg;
                     return project;
                 });
                 setProjects(updatedProjects);
@@ -61,7 +61,7 @@ const Projects = () => {
                             whileInView="visible"
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 }}
-                            className="bg-neutral-800/50 rounded-xl overflow-hidden border border-neutral-700 hover:border-primary-500 transition-all duration-300 shadow-lg"
+                            className="bg-neutral-800/50 rounded-xl overflow-hidden border border-neutral-700 hover:border-primary-500 transition-all duration-300 shadow-lg flex flex-col"
                         >
                             {/* Project Image */}
                             <motion.div
@@ -86,39 +86,39 @@ const Projects = () => {
                             </motion.div>
 
                             {/* Project Content */}
-                            <div className="p-6">
+                            <div className="p-6 flex-1 flex flex-col">
                                 <h3 className="text-xl font-semibold text-primary-400 mb-2">
                                     {project.title}
                                 </h3>
-                                <p className="text-gray-300 text-sm mb-4">
+                                <p className="text-gray-300 text-sm mb-4 flex-1">
                                     {project.description}
                                 </p>
 
-                                {/* Buttons */}
-                                <div className="flex gap-4 flex-wrap">
+                                {/* Buttons Container */}
+                                <div className="grid grid-cols-3 gap-2">
                                     {project.githubRepo && (
-                                        <a
-                                            href={project.githubRepo}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="px-4 py-2 flex items-center justify-center gap-2 bg-neutral-800 text-gray-300 border border-neutral-600 rounded-full hover:bg-primary-500 hover:text-white hover:border-primary-600 transition-all duration-300"
+                                        <a 
+                                            href={project.githubRepo} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            className="col-span-1 px-3 py-2 flex items-center justify-center gap-1 bg-neutral-800 text-gray-300 border border-neutral-600 rounded-full hover:bg-primary-500 hover:text-white hover:border-primary-600 transition-all duration-300 text-sm"
                                         >
-                                           <AiFillGithub/> Client
+                                            <AiFillGithub /> Client
                                         </a>
                                     )}
                                     {project.githubServer && (
-                                        <a
-                                            href={project.githubServer}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="px-4 py-2 flex items-center justify-center gap-2 bg-neutral-800 text-gray-300 border border-neutral-600 rounded-full hover:bg-accent-500 hover:text-white hover:border-accent-600 transition-all duration-300"
+                                        <a 
+                                            href={project.githubServer} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            className="col-span-1 px-3 py-2 flex items-center justify-center gap-1 bg-neutral-800 text-gray-300 border border-neutral-600 rounded-full hover:bg-accent-500 hover:text-white hover:border-accent-600 transition-all duration-300 text-sm"
                                         >
-                                           <AiFillGithub /> Server
+                                            <AiFillGithub /> Server
                                         </a>
                                     )}
-                                    <Link
+                                    <Link 
                                         to={`/projects/${encodeURIComponent(project.title.toLowerCase().replace(/\s+/g, "-"))}`}
-                                        className="px-4 py-2 bg-gradient-to-r from-primary-500 to-accent-500 text-white rounded-full font-semibold shadow-lg hover:from-primary-600 hover:to-accent-600 transition-all duration-300"
+                                        className="col-span-1 px-3 py-2 bg-gradient-to-r from-primary-500 to-accent-500 text-white rounded-full font-semibold shadow-lg hover:from-primary-600 hover:to-accent-600 transition-all duration-300 text-center text-sm"
                                     >
                                         View Details
                                     </Link>

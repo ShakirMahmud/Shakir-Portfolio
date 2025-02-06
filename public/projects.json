@@ -1,6 +1,75 @@
 [
   {
     "id": 1,
+    "title": "🏢 HRNexus - Employee Management Platform",
+    "description": "A comprehensive Employee Management Platform designed to streamline HR processes, track employee performance, and facilitate seamless workplace communication.",
+    "features": [
+      "Multi-role authentication with Employee, HR, and Admin roles",
+      "Secure Firebase authentication with social login (Google)",
+      "Employee dashboard with work tracking, task submission, and payment history",
+      "HR management features for employee verification and progress tracking",
+      "Admin controls for salary adjustments, payroll management, and role modifications",
+      "Responsive design with Tailwind CSS",
+      "Data visualization with charts and graphs",
+      "Stripe payment integration for secure salary transactions",
+      "Advanced filtering for work records",
+      "User feedback collection and contact management",
+      "Security features including JWT authentication and role-based route protection"
+    ],
+    "technologies": [
+      "React.js",
+      "Tailwind CSS",
+      "Firebase",
+      "Framer Motion",
+      "Tanstack Query",
+      "Stripe",
+      "Axios",
+      "React Router",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT"
+    ],
+    "liveSite": "https://hr-nexus-shakir.vercel.app/",
+    "githubRepo": "https://github.com/ShakirMahmud/HRNexus-Client",
+    "githubServer": "https://github.com/ShakirMahmud/HRNexus-Server",
+    "screenshot": "https://example.com/hrnexus-screenshot.png",
+    "detailsPage": "/projects/hrnexus",
+    "detailedDescription": "HRNexus provides an all-in-one platform for companies to manage employees, track work progress, and streamline HR operations. The system offers role-based authentication and a user-friendly dashboard for employees, HR professionals, and administrators.",
+    "challengesFaced": [
+      "Ensuring secure role-based authentication and access control.",
+      "Implementing a seamless Stripe payment gateway for salary transactions.",
+      "Creating a scalable architecture for handling large employee data efficiently."
+    ],
+    "improvements": [
+      "Enhance the UI/UX for a more intuitive employee dashboard experience.",
+      "Optimize database queries to improve performance and speed.",
+      "Add automated reporting and email notifications for payroll updates."
+    ],
+    "futureImprovements": [
+      "Implement AI-based performance analysis for employees.",
+      "Introduce a mobile app for easy access to HR functionalities.",
+      "Add real-time chat functionality for internal communication."
+    ],
+    "technologiesUsed": {
+      "frontend": [
+        "React.js",
+        "Tailwind CSS",
+        "Firebase Authentication",
+        "Framer Motion",
+        "Tanstack Query"
+      ],
+      "backend": ["Node.js", "Express.js", "MongoDB", "JWT Authentication"],
+      "additionalPackages": [
+        "Material Tailwind",
+        "Lucide React",
+        "Sweetalert2",
+        "Moment.js"
+      ]
+    }
+  },
+  {
+    "id": 2,
     "title": "🍽️ BiteManager - Restaurant Management Website",
     "description": "A comprehensive restaurant management system to streamline processes, enhance customer interaction, and boost online presence.",
     "features": [
@@ -9,7 +78,14 @@
       "Light/Dark mode toggle",
       "Food management, purchasing, and order tracking features"
     ],
-    "technologies": ["React.js", "TailwindCSS", "Node.js", "Express.js", "MongoDB", "JWT"],
+    "technologies": [
+      "React.js",
+      "TailwindCSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT"
+    ],
     "liveSite": "https://bite-manager-client-shakir.vercel.app/",
     "githubRepo": "https://github.com/ShakirMahmud/BiteManager-Client",
     "githubServer": "https://github.com/ShakirMahmud/BiteManager-Server",
@@ -32,13 +108,24 @@
       "Optimize database queries to improve speed, particularly when loading food items."
     ],
     "technologiesUsed": {
-      "frontend": ["React.js", "TailwindCSS", "DaisyUI", "SweetAlert2", "Framer Motion"],
+      "frontend": [
+        "React.js",
+        "TailwindCSS",
+        "DaisyUI",
+        "SweetAlert2",
+        "Framer Motion"
+      ],
       "backend": ["Node.js", "Express.js", "MongoDB", "JWT"],
-      "additionalPackages": ["Moment.js", "React Query", "Axios", "Lottie React"]
+      "additionalPackages": [
+        "Moment.js",
+        "React Query",
+        "Axios",
+        "Lottie React"
+      ]
     }
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "🏀 EquiSports - Online Sports Equipment Store",
     "description": "An online store offering sports accessories with features like authentication, product management, and responsive design.",
     "features": [
@@ -47,7 +134,14 @@
       "Dark/Light theme toggle",
       "Product sorting, search, and responsive design"
     ],
-    "technologies": ["React", "TailwindCSS", "Node.js", "Express.js", "MongoDB", "Firebase"],
+    "technologies": [
+      "React",
+      "TailwindCSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Firebase"
+    ],
     "liveSite": "https://equi-sports-shakir.vercel.app/",
     "githubRepo": "https://github.com/ShakirMahmud/equiSports-client",
     "githubServer": "https://github.com/ShakirMahmud/equiSports-server",
@@ -70,13 +164,24 @@
       "Build a review and rating system for users to leave feedback on products."
     ],
     "technologiesUsed": {
-      "frontend": ["React", "TailwindCSS", "React Router DOM", "Firebase Authentication", "Lottie React"],
+      "frontend": [
+        "React",
+        "TailwindCSS",
+        "React Router DOM",
+        "Firebase Authentication",
+        "Lottie React"
+      ],
       "backend": ["Node.js", "Express.js", "MongoDB", "CORS middleware"],
-      "additionalPackages": ["React Tooltip", "SweetAlert2", "Swiper", "React Awesome Reveal"]
+      "additionalPackages": [
+        "React Tooltip",
+        "SweetAlert2",
+        "Swiper",
+        "React Awesome Reveal"
+      ]
     }
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "💼 Career Fusion - Career Counseling Platform",
     "description": "A career counseling website offering personalized advice, guidance, and resources to users.",
     "features": [
@@ -107,7 +212,12 @@
       "Introduce notifications for users when new content or counseling services are available."
     ],
     "technologiesUsed": {
-      "frontend": ["React", "TailwindCSS", "Swiper.js", "Firebase Authentication"],
+      "frontend": [
+        "React",
+        "TailwindCSS",
+        "Swiper.js",
+        "Firebase Authentication"
+      ],
       "backend": ["Firebase Functions", "Firebase Firestore"],
       "additionalPackages": ["React Router", "React Icons", "DaisyUI"]
     }
