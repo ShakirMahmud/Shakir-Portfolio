@@ -91,7 +91,7 @@ const Navbar = () => {
 
                 <div className="navbar-end">
                     <a
-                        href="/public/Shakir_Cv.pdf"
+                        href="/Resume_Of_Shakir_Mahmud.pdf"
                         download
                         className="btn btn-primary btn-sm lg:btn-md bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 border-none text-white shadow-lg shadow-primary-500/20 hover:shadow-primary-600/30 transition-all duration-300"
                     >

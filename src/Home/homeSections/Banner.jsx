@@ -80,7 +80,7 @@ const Banner = () => {
           {/* Resume Button */}
           <motion.div variants={itemVariants}>
             <a
-              href="/public/Shakir_Cv.pdf"
+              href="/Resume_Of_Shakir_Mahmud.pdf"
               download
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-full font-semibold shadow-lg shadow-primary-500/20 hover:shadow-primary-600/30 transition-all duration-300 hover:-translate-y-1"
             >
